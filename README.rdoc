@@ -1,28 +1,15 @@
 == README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+This was created as reference code to a blog post:
+  http://writingrolemodel.blogspot.com/2016/02/dynamic-rails-model.html
+  
 
-Things you may want to cover:
+Can spin up the application if you wish:
+ rake db:create
+ rake db:migrate
+ rake db:seed
+ 
+Will create a customers table and sets of "customer" tables for each customer.
+Application allows you to select a customer and manager the tables it owns.
 
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
-
-
-Please feel free to use a different markup language if you do not plan to run
-<tt>rake doc:app</tt>.
+Models for the "customer" tables are created dynamically.
