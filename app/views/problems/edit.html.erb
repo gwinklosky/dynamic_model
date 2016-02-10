@@ -1,0 +1,6 @@
+<h1>Editing Problem</h1>
+
+<%= render 'form' %>
+
+<%= link_to 'Show', customer_problem_path(:customer_id => @customer.id, :id => @problem.id) %> |
+<%= link_to 'Back', customer_problems_path(@customer) %>

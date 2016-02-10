@@ -1,0 +1,20 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Title:</strong>
+  <%= @problem.title %>
+</p>
+
+<p>
+  <strong>Description:</strong>
+  <%= @problem.description %>
+</p>
+
+<p>
+  <strong>Severity:</strong>
+  <%= @problem.severity %>
+</p>
+
+<%= link_to 'Edit', edit_customer_problem_path(:customer_id => @customer.id, :id => @problem.id) %> |
+<%= link_to 'Solutions', customer_problem_solutions_path(:customer_id => @customer.id, :problem_id => @problem.id) %> |
+<%= link_to 'Back', customer_problems_path(@customer) %>

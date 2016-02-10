@@ -1,0 +1,24 @@
+default: &default
+  adapter: postgresql
+  encoding: unicode
+  # For details on connection pooling, see rails configuration guide
+  # http://guides.rubyonrails.org/configuring.html#database-pooling
+  pool: 5
+
+development:
+  <<: *default
+  database: dynamic_model_development
+  username: postgres
+  password: garygary
+
+test:
+  <<: *default
+  database: dynamic_model_test
+  username: postgres
+  password: garygary
+
+production:
+  <<: *default
+  database: n_a
+  username: n_a
+  password: n_a

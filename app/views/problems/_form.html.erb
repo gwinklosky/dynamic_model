@@ -1,0 +1,29 @@
+<%= form_tag({controller: "problems", action: @form_action}, method: @form_method) do %> 
+  <% if @problem.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@problem.errors.count, "error") %> prohibited this problem from being saved:</h2>
+
+      <ul>
+      <% @problem.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= label_tag :title, 'Title' %><br>
+    <%= text_field_tag :title, @problem.title, :name => "problem[title]" %>
+  </div>
+  <div class="field">
+    <%= label_tag :title, 'Description' %><br>
+    <%= text_field_tag :description, @problem.description, :name => "problem[description]" %>
+  </div>
+  <div class="field">
+    <%= label_tag :title, 'Severity' %><br>
+    <%= text_field_tag :severity, @problem.severity, :name => "problem[severity]" %>
+  </div>
+  <div class="actions">
+    <%= submit_tag('Submit') %>
+  </div>
+<% end %>

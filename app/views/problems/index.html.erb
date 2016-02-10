@@ -1,0 +1,29 @@
+<h1>Listing Problems for <%= @customer.name %></h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Title</th>
+      <th>Description</th>
+      <th>Severity</th>
+      <th colspan="2"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @problems.each do |problem| %>
+      <tr>
+        <td><%= problem.title %></td>
+        <td><%= problem.description %></td>
+        <td><%= problem.severity %></td>
+        <td><%= link_to 'Show', customer_problem_path(:customer_id => @customer.id, :id => problem.id) %></td>
+        <td><%= link_to 'Edit', edit_customer_problem_path(:customer_id => @customer.id, :id => problem.id) %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New problem', new_customer_problem_path(@customer) %> |
+<%= link_to @customer.name, customer_path(@customer) %>
